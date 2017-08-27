@@ -33,6 +33,15 @@
         -webkit-flex-direction:column;
         flex-direction:column;
     }
+    .outer.page2 {
+        left: 100%;
+    }
+    .outer.page2 .inner .item {
+        background-color: #008cee;
+    }
+    .outer.page2 .inner .item .date {
+        color: #fff;
+    }
     .header{
         position: relative;
         height: 44px;
@@ -45,7 +54,7 @@
         font-size: 2rem;
         font-weight: normal;
     }
-    .header .btn, #destroy {
+    .header .btn, #destroy, #destroy2 {
         position: absolute;
         right: 0;
         top: 0;
@@ -56,7 +65,7 @@
         font-size: 1.4rem;
         background-color: #ccc;
     }
-    #destroy {
+    #destroy, #destroy2 {
         right: 4em;
     }
     .header .btn:active{
@@ -136,78 +145,152 @@
     <link rel="stylesheet" href="../dist/dropload.css">
 </head>
 <body>
-<div class="outer">
-    <div class="header">
-        <h1>头部</h1>
-        <a href="javascript:;" class="destroy" id="destroy">销毁</a>
-        <a href="javascript:;" class="btn lock">锁定</a>
-        <div class="footer" style="position:absolute;left:0;top:0;background-color:#fff;">
-            <a href=""></a>
-            <a href="#"></a>
+<div class="container">
+    <!-- 第一页 -->
+    <div class="outer">
+        <div class="header">
+            <h1>头部</h1>
+            <a href="javascript:;" class="destroy" id="destroy">销毁</a>
+            <a href="javascript:;" class="btn lock">锁定</a>
+            <div class="footer" style="position:absolute;left:0;top:0;background-color:#fff;">
+                <a href=""></a>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="inner" id="route1">
+            <div class="lists">
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>1文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>2文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>3文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>4文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>5文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>6文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>7文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>8文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>9文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>10文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>11文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>12文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+            </div>
         </div>
     </div>
-    <div class="inner">
-        <div class="lists">
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>1文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>2文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>3文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>4文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>5文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>6文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>7文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>8文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>9文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>10文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>11文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
-            <a class="item" href="#">
-                <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
-                <h3>12文字描述文字描述文字描述文字描述文字描述</h3>
-                <span class="date">2014-14-14</span>
-            </a>
+    <!-- 第二页 -->
+    <div class="outer page2">
+        <div class="header">
+            <h1>第二页</h1>
+            <a href="javascript:;" class="destroy" id="destroy2">销毁</a>
+        </div>
+        <div class="inner" id="route2">
+            <div class="lists2">
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>1文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>2文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>3文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>4文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>5文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>6文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>7文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>8文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>9文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>10文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>11文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="http://d6.yihaodianimg.com/N02/M0B/81/5A/CgQCsVMhX_mAAvXsAAJDE3K2zh485900_80x80.jpg" alt="">
+                    <h3>12文字描述文字描述文字描述文字描述文字描述</h3>
+                    <span class="date">2014-14-14</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -234,6 +317,7 @@ $(function(){
         }
     });
 
+// 第一个dropload实例
     // dropload
     var opts = {
         domUp : {
@@ -305,7 +389,7 @@ $(function(){
             });
         }
     };
-    var dropload = $('.inner').dropload(opts);
+    var dropload = $('#route1').dropload(opts);
 
     // 清除dropload实例
     // 新建dropload实例
@@ -316,10 +400,98 @@ $(function(){
             $(this).text('创建');
             dropload.destroy();
         } else {
-            dropload = $('.inner').dropload(opts);
+            dropload = $('#route1').dropload(opts);
             $(this).text('销毁');
             $(this).addClass('destroy');
         }
+        console.log(dropload);
+    });
+
+// 第二个dropload实例
+    var opts2 = {
+        domUp : {
+            domClass   : 'dropload-up',
+            domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
+            domUpdate  : '<div class="dropload-update">↑释放更新</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+        },
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+            domNoData  : '<div class="dropload-noData">暂无数据</div>'
+        },
+        loadUpFn : function(me){
+            $.ajax({
+                type: 'GET',
+                url: 'json/update.json',
+                dataType: 'json',
+                success: function(data){
+                    var result = '';
+                    for(var i = 0; i < data.lists.length; i++){
+                        result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
+                                        +'<img src="'+data.lists[i].pic+'" alt="">'
+                                        +'<h3>'+data.lists[i].title+'</h3>'
+                                        +'<span class="date">'+data.lists[i].date+'</span>'
+                                    +'</a>';
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        $('.lists2').html(result);
+                        // 每次数据加载完，必须重置
+                        dropload2.resetload();
+                    },1000);
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    dropload2.resetload();
+                }
+            });
+        },
+        loadDownFn : function(me){
+            $.ajax({
+                type: 'GET',
+                url: 'json/more.json',
+                dataType: 'json',
+                success: function(data){
+                    var result = '';
+                    for(var i = 0; i < data.lists.length; i++){
+                        result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
+                                        +'<img src="'+data.lists[i].pic+'" alt="">'
+                                        +'<h3>'+data.lists[i].title+'</h3>'
+                                        +'<span class="date">'+data.lists[i].date+'</span>'
+                                    +'</a>';
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        $('.lists2').append(result);
+                        // 每次数据加载完，必须重置
+                        dropload2.resetload();
+                    },1000);
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    dropload2.resetload();
+                }
+            });
+        }
+    };
+    var dropload2 = $('#route2').dropload(opts2);
+
+    $('#destroy2').on('click', function() {
+        var $this = $(this);
+        if($(this).hasClass('destroy')) {
+            $(this).removeClass('destroy');
+            $(this).text('创建');
+            dropload2.destroy();
+        } else {
+            dropload2 = $('#route2').dropload(opts2);
+            $(this).text('销毁');
+            $(this).addClass('destroy');
+        }
+        console.log(dropload2);
     });
 });
 </script>

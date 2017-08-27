@@ -57,7 +57,9 @@
         // 如果加载下方，事先在下方插入DOM
         if(me.opts.loadDownFn != ''){
             me.$element.append('<div class="'+me.opts.domDown.domClass+'">'+me.opts.domDown.domRefresh+'</div>');
-            me.$domDown = $('.'+me.opts.domDown.domClass);
+            // 会选中当前页面中全部的DownDOM
+            // 修复：针对当前实例对象特殊化
+            me.$domDown = $( me.$element.selector + ' .'+me.opts.domDown.domClass);
         }
 
         // 计算提前加载距离
@@ -147,8 +149,8 @@
             // 暂时是去除最后一个？
             try {
                 console.log('$domDown : ', me.$domDown.eq(-1));
-                me.$domUp && me.$domUp.eq(-1).remove();
-                me.$domDown && me.$domDown.eq(-1).remove();
+                me.$domUp && me.$domUp.remove();
+                me.$domDown && me.$domDown.remove();
             } catch (err) {
                 console.warn(err);
             }
@@ -186,7 +188,7 @@
         if(me.opts.loadUpFn != '' && me.touchScrollTop <= 0 && me.direction == 'down' && !me.isLockUp){
             e.preventDefault();
 
-            me.$domUp = $('.'+me.opts.domUp.domClass);
+            me.$domUp = $(me.$element.selector + '.'+me.opts.domUp.domClass);
             // 如果加载区没有DOM
             if(!me.upInsertDOM){
                 me.$element.prepend('<div class="'+me.opts.domUp.domClass+'"></div>');
