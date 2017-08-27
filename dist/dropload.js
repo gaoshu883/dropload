@@ -83,7 +83,18 @@
         fnAutoLoad(me);
 
         // 窗口调整
-        $win.on('resize',function(){
+        $win.on('resize',resize);
+
+        // 绑定触摸
+        me.$element.on('touchstart',touchstart);
+        me.$element.on('touchmove',touchmove);
+        me.$element.on('touchend',touchend);
+
+        // 加载下方
+        me.$scrollArea.on('scroll',scroll);
+
+        // callbacks
+        function resize () {
             clearTimeout(me.timer);
             me.timer = setTimeout(function(){
                 if(me.opts.scrollArea == win){
@@ -94,37 +105,54 @@
                 }
                 fnAutoLoad(me);
             },150);
-            
-        });
-
-        // 绑定触摸
-        me.$element.on('touchstart',function(e){
+        }
+        function touchstart (e) {
             if(!me.loading){
                 fnTouches(e);
                 fnTouchstart(e, me);
             }
-        });
-        me.$element.on('touchmove',function(e){
+        }
+        function touchmove (e) {
             if(!me.loading){
                 fnTouches(e, me);
                 fnTouchmove(e, me);
             }
-        });
-        me.$element.on('touchend',function(){
+        }
+        function touchend () {
             if(!me.loading){
                 fnTouchend(me);
             }
-        });
-
-        // 加载下方
-        me.$scrollArea.on('scroll',function(){
+        }
+        function scroll () {
             me._scrollTop = me.$scrollArea.scrollTop();
 
             // 滚动页面触发加载数据
             if(me.opts.loadDownFn != '' && !me.loading && !me.isLockDown && (me._scrollContentHeight - me._threshold) <= (me._scrollWindowHeight + me._scrollTop)){
                 loadDown(me);
             }
-        });
+        }
+        // 销毁实例
+        // 主要是做以下几件事情：
+        // 1. 解除所有注册的事件回调
+        // 2. 移出动态添加的DOM节点
+        me.destroy = function() {
+            // 1. 解除所有事件绑定
+            $win.off('resize', resize);
+            me.$element.off('touchstart',touchstart);
+            me.$element.off('touchmove',touchmove);
+            me.$element.off('touchend',touchend);
+            me.$scrollArea.off('scroll',scroll);
+            // 2. 移除动态添加的DOM节点
+            // 这里还没有验证？
+            // 暂时是去除最后一个？
+            try {
+                console.log('$domDown : ', me.$domDown.eq(-1));
+                me.$domUp && me.$domUp.eq(-1).remove();
+                me.$domDown && me.$domDown.eq(-1).remove();
+            } catch (err) {
+                console.warn(err);
+            }
+        }
     };
 
     // touches
@@ -164,7 +192,7 @@
                 me.$element.prepend('<div class="'+me.opts.domUp.domClass+'"></div>');
                 me.upInsertDOM = true;
             }
-            
+
             fnTransition(me.$domUp,0);
 
             // 下拉

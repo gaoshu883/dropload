@@ -45,7 +45,7 @@
         font-size: 2rem;
         font-weight: normal;
     }
-    .header .btn{
+    .header .btn, #destroy {
         position: absolute;
         right: 0;
         top: 0;
@@ -55,6 +55,9 @@
         color: #06c;
         font-size: 1.4rem;
         background-color: #ccc;
+    }
+    #destroy {
+        right: 4em;
     }
     .header .btn:active{
         background-color: #aaa;
@@ -136,6 +139,7 @@
 <div class="outer">
     <div class="header">
         <h1>头部</h1>
+        <a href="javascript:;" class="destroy" id="destroy">销毁</a>
         <a href="javascript:;" class="btn lock">锁定</a>
         <div class="footer" style="position:absolute;left:0;top:0;background-color:#fff;">
             <a href=""></a>
@@ -209,7 +213,7 @@
 </div>
 <!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
 <script src="js/zepto.min.js"></script>
-<script src="../dist/dropload.min.js"></script>
+<script src="../dist/dropload.js"></script>
 <script>
 $(function(){
     // 按钮操作
@@ -231,7 +235,7 @@ $(function(){
     });
 
     // dropload
-    var dropload = $('.inner').dropload({
+    var opts = {
         domUp : {
             domClass   : 'dropload-up',
             domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
@@ -299,6 +303,22 @@ $(function(){
                     dropload.resetload();
                 }
             });
+        }
+    };
+    var dropload = $('.inner').dropload(opts);
+
+    // 清除dropload实例
+    // 新建dropload实例
+    $('#destroy').on('click', function() {
+        var $this = $(this);
+        if($(this).hasClass('destroy')) {
+            $(this).removeClass('destroy');
+            $(this).text('创建');
+            dropload.destroy();
+        } else {
+            dropload = $('.inner').dropload(opts);
+            $(this).text('销毁');
+            $(this).addClass('destroy');
         }
     });
 });
